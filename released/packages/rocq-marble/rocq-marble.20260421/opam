@@ -1,0 +1,33 @@
+
+opam-version: "2.0"
+synopsis: "Data structures based on machine integers and primitive arrays"
+maintainer: "François Pottier <francois.pottier@inria.fr>"
+authors: "François Pottier <francois.pottier@inria.fr>"
+homepage: "https://gitlab.inria.fr/fpottier/marble"
+dev-repo: "git+https://gitlab.inria.fr/fpottier/marble/"
+bug-reports: "https://gitlab.inria.fr/fpottier/marble/issues"
+license: "LGPL-2.1-only"
+build: [
+  [ "dune" "build" "-p" name "-j" jobs "@install" ]
+]
+tags: [
+  "date:2026-04-21"
+  "logpath:marble"
+]
+depends: [
+  "rocq-core" { (>= "9.1") }
+  "rocq-stdlib"
+  "rocq-equations"
+  "rocq-stdpp" { (>= "1.13.0")}
+  "dune" { >= "3.21" }
+  "rocq-listz"
+]
+x-maintenance-intent: ["(latest)"]
+url {
+  src:
+    "https://gitlab.inria.fr/fpottier/marble/-/archive/20260421/archive.tar.gz"
+  checksum: [
+    "md5=fb7c67c8a1a4f032c10a850a266814d5"
+    "sha512=cdfc77ede536b3b5955c02908441b07b00b143167499c37955f82e9a5a2db8f6525a20189cbcfefe394a91e3bbbd3a7416a7d9c5527a728b37f50902ac8eebe9"
+  ]
+}
