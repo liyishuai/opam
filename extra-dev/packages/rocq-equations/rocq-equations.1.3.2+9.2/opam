@@ -43,5 +43,5 @@ build: [
 dev-repo: "git+https://github.com/mattam82/Coq-Equations.git"
 url {
   src: "https://github.com/mattam82/Coq-Equations/archive/refs/tags/v1.3.2-9.2.tar.gz"
-  checksum: "sha512=3b5837641798e56787e98561dc5128e0acbbb588a8b7935b9e5b3320e59ce96d09ff0df638bd49de5cb8c6d159ebfc79a7f86533e98e34235729664daf1f7ada"
+  checksum: "sha512=04fb7a776b5ef6c3e34d8bdb9fe5e8873b03bff5616ae563eccba4121ad92bb2f49c9a8e2f178cb168ba71426c6ee1ac9f8dee72107dad62923c9006f03fbb9e"
 }
