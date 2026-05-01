@@ -1,0 +1,39 @@
+opam-version: "2.0"
+maintainer: "Arthur Azevedo de Amorim <arthur.aa@gmail.com>"
+
+homepage: "https://github.com/arthuraa/deriving"
+bug-reports: "https://github.com/arthuraa/deriving/issues"
+dev-repo: "git+https://github.com/arthuraa/deriving.git"
+license: "MIT"
+
+# HACK: BENCH_PNGS= disables the `bench` target that bench/bench.mk wires in
+# as a prerequisite of `test`, since the benchmarks need gnuplot and ocamlfind
+# csv.  Drop this once a newer deriving release no longer wires bench into test.
+build: [ make "-j" "%{jobs}%" "BENCH_PNGS=" "test" {with-test} ]
+install: [ make "install" ]
+depends: [
+  "coq" { (>= "8.17" & < "9.2~") | (= "dev") }
+  "coq-mathcomp-ssreflect" {>= "2.0"}
+]
+
+tags: [
+  "keyword:generic programming"
+  "category:Computer Science/Data Types and Data Structures"
+  "logpath:deriving"
+]
+authors: [
+  "Arthur Azevedo de Amorim"
+]
+
+synopsis: "Generic instances of MathComp classes"
+description: """
+Deriving provides generic instances of MathComp classes for
+inductive data types.  It includes native support for eqType,
+choiceType, countType and finType instances, and it allows users to
+define their own instances for other classes.
+"""
+
+url {
+  src: "https://github.com/arthuraa/deriving/archive/refs/tags/v0.2.3.tar.gz"
+  checksum: "sha512=17640ba611cea51527493d7f69b83a2a808e770da20f1144546d4de2136122b9c3b5a00549b518702ba236d6e17abfac0577d59d4463fac9e969cdcb202ab9ba"
+}
