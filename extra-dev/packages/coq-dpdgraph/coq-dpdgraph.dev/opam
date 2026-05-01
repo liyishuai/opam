@@ -12,17 +12,12 @@ Coq plugin that extracts the dependencies between Coq objects,
 and produces files with dependency information. Includes tools
 to visualize dependency graphs and find unused definitions."""
 
-build: [
-  ["autoconf"] {dev}
-  ["./configure"]
-  [make "-j%{jobs}%" "WARN_ERR="]
-]
+build: [make "-j%{jobs}%"]
 run-test: [make "test-suite"]
 install: [make "install" "BINDIR=%{bin}%"]
 depends: [
-  "ocaml" {>= "4.05.0"}
-  "coq" {= "dev"}
-  "conf-autoconf" {build & dev}
+  "ocaml" {>= "4.09.0"}
+  "rocq-core" {= "dev"}
   "ocamlgraph" 
 ]
 
